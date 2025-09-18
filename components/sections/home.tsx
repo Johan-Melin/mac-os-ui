@@ -15,7 +15,7 @@ export function HomeSection() {
           AC
         </div>
         <div>
-          <h1 className="text-4xl font-bold text-balance mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 className="heading-h1">
             John Doe
           </h1>
           <p className="text-xl text-muted-foreground" style={{ fontFamily: "var(--font-source-sans)" }}>

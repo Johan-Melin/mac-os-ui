@@ -26,7 +26,7 @@ export function SkillsSection() {
       <div className="grid md:grid-cols-3 gap-8">
         {skillCategories.map((category) => (
           <div key={category.title}>
-            <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <h3 className="heading-h3">
               {category.title}
             </h3>
             <div className="space-y-2">

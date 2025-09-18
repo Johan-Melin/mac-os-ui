@@ -12,7 +12,7 @@ export function AboutSection() {
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <h2 className="heading-h2">
               Background
             </h2>
             <p className="text-pretty mb-4">
@@ -23,7 +23,7 @@ export function AboutSection() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <h2 className="heading-h2">
               Details
             </h2>
             <div className="space-y-3">

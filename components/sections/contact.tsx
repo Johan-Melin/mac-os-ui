@@ -12,7 +12,7 @@ export function ContactSection() {
     >
       <div className="text-center space-y-6">
         <div>
-          <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 className="heading-h2">
             {"Let's Work Together"}
           </h2>
           <p className="text-lg text-muted-foreground text-pretty">
