@@ -3,13 +3,7 @@
 import { useState, useEffect } from "react"
 import { MacOSMenubar } from "@/components/macos-menubar"
 import { MacOSDock } from "@/components/macos-dock"
-import {
-  HomeSection,
-  AboutSection,
-  ProjectsSection,
-  SkillsSection,
-  ContactSection,
-} from "@/components/portfolio-sections"
+import { HomeSection, AboutSection, ProjectsSection, SkillsSection, ContactSection } from "@/components/sections"
 
 type Section = "home" | "about" | "projects" | "skills" | "contact" | null
 
