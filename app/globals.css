@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant classic (&:is(.classic *));
 
 :root {
   /* macOS Light Theme */
@@ -95,52 +94,6 @@
   --macos-traffic-green: #28ca42;
   --macos-dock: rgba(45, 55, 72, 0.8);
   --macos-dock-border: rgba(255, 255, 255, 0.1);
-}
-
-.classic {
-  /* Classic macOS Theme (Aqua-inspired) */
-  --background: #e8f4fd;
-  --foreground: #1a202c;
-  --card: #ffffff;
-  --card-foreground: #1a202c;
-  --popover: #ffffff;
-  --popover-foreground: #1a202c;
-  --primary: #3182ce;
-  --primary-foreground: #ffffff;
-  --secondary: #38b2ac;
-  --secondary-foreground: #ffffff;
-  --muted: #f7fafc;
-  --muted-foreground: #4a5568;
-  --accent: #38b2ac;
-  --accent-foreground: #ffffff;
-  --destructive: #e53e3e;
-  --destructive-foreground: #ffffff;
-  --border: #cbd5e0;
-  --input: #ffffff;
-  --ring: #3182ce;
-  --chart-1: #3182ce;
-  --chart-2: #38b2ac;
-  --chart-3: #e53e3e;
-  --chart-4: #4a5568;
-  --chart-5: #f7fafc;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1a202c;
-  --sidebar-primary: #3182ce;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #38b2ac;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #cbd5e0;
-  --sidebar-ring: #3182ce;
-
-  /* Classic macOS specific colors */
-  --macos-menubar: linear-gradient(to bottom, #f0f8ff, #e6f3ff);
-  --macos-menubar-text: #1a202c;
-  --macos-window-chrome: #f0f8ff;
-  --macos-traffic-red: #ff5f57;
-  --macos-traffic-yellow: #ffbd2e;
-  --macos-traffic-green: #28ca42;
-  --macos-dock: rgba(240, 248, 255, 0.9);
-  --macos-dock-border: rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {

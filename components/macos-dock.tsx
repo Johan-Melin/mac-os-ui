@@ -45,10 +45,10 @@ export function MacOSDock({ onNavigate }: MacOSDockProps) {
     },
     {
       id: "theme",
-      icon: theme === "light" ? "☀️" : theme === "dark" ? "🌙" : "🎨",
+      icon: theme === "light" ? "☀️" : "🌙",
       label: "Theme",
       action: () => {
-        const themes = ["light", "dark", "classic"]
+        const themes = ["light", "dark"]
         const currentIndex = themes.indexOf(theme || "light")
         const nextTheme = themes[(currentIndex + 1) % themes.length]
         setTheme(nextTheme)

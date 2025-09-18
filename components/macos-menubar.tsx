@@ -61,11 +61,6 @@ export function MacOSMenubar() {
           action: () => setTheme("dark"),
           icon: <Moon className="w-4 h-4" />,
         },
-        {
-          label: "Classic Theme",
-          action: () => setTheme("classic"),
-          icon: <Palette className="w-4 h-4" />,
-        },
       ],
     },
   ]
