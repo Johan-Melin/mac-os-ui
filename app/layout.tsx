@@ -19,7 +19,7 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: "Alex Chen - Web Developer Portfolio",
+  title: "John Doe - Web Developer Portfolio",
   description: "Full-stack web developer specializing in React, Next.js, and modern web technologies",
   generator: "v0.app",
 }

@@ -43,7 +43,7 @@ export function HomeSection() {
         </div>
         <div>
           <h1 className="text-4xl font-bold text-balance mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
-            Alex Chen
+            John Doe
           </h1>
           <p className="text-xl text-muted-foreground" style={{ fontFamily: "var(--font-source-sans)" }}>
             Full-Stack Web Developer
@@ -131,7 +131,7 @@ export function AboutSection() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-muted-foreground" />
-                <span>alex@example.com</span>
+                <span>john@example.com</span>
               </div>
             </div>
           </div>
@@ -341,7 +341,7 @@ export function ContactSection() {
         <div className="flex justify-center gap-4">
           <Button className="gap-2">
             <Mail className="w-4 h-4" />
-            alex@example.com
+            john@example.com
           </Button>
           <Button variant="outline" className="gap-2 bg-transparent">
             <Github className="w-4 h-4" />
