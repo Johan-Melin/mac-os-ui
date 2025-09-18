@@ -108,7 +108,7 @@ export function MacOSMenubar({ currentTime }: MenubarProps) {
                       key={index}
                       className="w-full px-4 py-1 text-left hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2"
                       onClick={() => {
-                        item.action()
+                        item.action?.()
                         setActiveMenu(null)
                       }}
                     >
