@@ -89,7 +89,7 @@ export function MacOSMenubar() {
             {activeMenu === menu.id && (
               <div
                 className="absolute top-full left-0 mt-1 min-w-48 bg-white/95 backdrop-blur-md rounded-md shadow-lg border border-black/10 py-1 menu-slide-down"
-                style={{ background: "var(--popover)", color: "var(--popover-foreground)" }}
+                style={{ background: "var(--background)", color: "var(--foreground)" }}
               >
                 {menu.items.map((item, index) =>
                   item.type === "separator" ? (
@@ -97,7 +97,7 @@ export function MacOSMenubar() {
                   ) : (
                     <button
                       key={index}
-                      className="w-full px-4 py-1 text-left hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2"
+                      className="w-full px-4 py-1 text-left hover:bg-secondary hover:text-background transition-colors flex items-center gap-2"
                       onClick={() => {
                         item.action?.()
                         setActiveMenu(null)

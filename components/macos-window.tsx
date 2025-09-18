@@ -36,7 +36,7 @@ export function MacOSWindow({ title, children, className = "", onClose }: MacOSW
           </button>
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <span className="text-sm font-medium text-card-foreground">{title}</span>
+          <span className="text-sm font-medium text-foreground">{title}</span>
         </div>
         <div className="w-12" /> {/* Spacer for centering */}
       </div>
