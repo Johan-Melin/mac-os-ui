@@ -4,11 +4,7 @@ import { useState } from "react"
 import { useTheme } from "next-themes"
 import { Monitor, Moon, Sun, Palette } from "lucide-react"
 
-interface MenubarProps {
-  currentTime: string
-}
-
-export function MacOSMenubar({ currentTime }: MenubarProps) {
+export function MacOSMenubar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const { theme, setTheme } = useTheme()
 
@@ -121,13 +117,6 @@ export function MacOSMenubar({ currentTime }: MenubarProps) {
             )}
           </div>
         ))}
-      </div>
-
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center gap-2">
-          <Monitor className="w-4 h-4" />
-          <span className="text-xs">{currentTime}</span>
-        </div>
       </div>
     </div>
   )

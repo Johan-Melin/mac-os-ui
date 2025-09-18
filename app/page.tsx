@@ -8,25 +8,6 @@ import { WindowManagerProvider } from "@/components/window-manager"
 
 export default function Portfolio() {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(sections[0]?.id ?? null)
-  const [currentTime, setCurrentTime] = useState("")
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date()
-      setCurrentTime(
-        now.toLocaleTimeString("en-US", {
-          hour12: true,
-          hour: "numeric",
-          minute: "2-digit",
-        }),
-      )
-    }
-
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const onClose = () => setCurrentSection(null)
   const active = sections.find((s) => s.id === currentSection)
@@ -34,7 +15,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       {/* macOS Menu Bar */}
-      <MacOSMenubar currentTime={currentTime} />
+      <MacOSMenubar />
 
       {/* Desktop Background */}
       <div
