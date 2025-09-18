@@ -1,37 +1,21 @@
 "use client"
 
-import { useState } from "react"
 import { MacOSWindow } from "./macos-window"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { ExternalLink, Github, Mail, MapPin, Calendar } from "lucide-react"
 
-export function HomeSection() {
-  const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
+interface WindowSectionProps {
+  onClose: () => void
+}
 
-  const handleClose = () => setWindowState("closed")
-
-  if (windowState === "closed") {
-    return null
-  }
-
-  if (windowState === "minimized") {
-    return (
-      <div
-        className="fixed bottom-20 left-4 w-16 h-12 bg-card/80 backdrop-blur-sm border border-border rounded cursor-pointer hover:scale-105 transition-transform"
-        onClick={() => setWindowState("normal")}
-      >
-        <div className="p-2 text-xs text-center text-card-foreground">Welcome</div>
-      </div>
-    )
-  }
-
+export function HomeSection({ onClose }: WindowSectionProps) {
   return (
     <MacOSWindow
       title="Welcome"
-      className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-2xl"}
-      onClose={handleClose}
+      className="max-w-2xl"
+      onClose={onClose}
     >
       <div className="text-center space-y-6">
         <div className="w-32 h-32 mx-auto rounded-full bg-slate-700 flex items-center justify-center text-4xl font-bold text-white shadow-lg">
@@ -46,9 +30,7 @@ export function HomeSection() {
           </p>
         </div>
         <p className="text-lg text-pretty max-w-lg mx-auto">
-          {
-            "Crafting beautiful, performant web experiences with modern technologies. Passionate about clean code, user experience, and innovative solutions."
-          }
+          {"Crafting beautiful, performant web experiences with modern technologies. Passionate about clean code, user experience, and innovative solutions."}
         </p>
         <div className="flex justify-center gap-4">
           <Button className="gap-2">
@@ -65,31 +47,12 @@ export function HomeSection() {
   )
 }
 
-export function AboutSection() {
-  const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
-
-  const handleClose = () => setWindowState("closed")
-
-  if (windowState === "closed") {
-    return null
-  }
-
-  if (windowState === "minimized") {
-    return (
-      <div
-        className="fixed bottom-20 left-20 w-16 h-12 bg-card/80 backdrop-blur-sm border border-border rounded cursor-pointer hover:scale-105 transition-transform"
-        onClick={() => setWindowState("normal")}
-      >
-        <div className="p-2 text-xs text-center text-card-foreground">About Me</div>
-      </div>
-    )
-  }
-
+export function AboutSection({ onClose }: WindowSectionProps) {
   return (
     <MacOSWindow
       title="About Me"
-      className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-3xl"}
-      onClose={handleClose}
+      className="max-w-3xl"
+      onClose={onClose}
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8">
@@ -98,14 +61,10 @@ export function AboutSection() {
               Background
             </h2>
             <p className="text-pretty mb-4">
-              {
-                "With over 5 years of experience in web development, I specialize in creating scalable, user-friendly applications using React, Next.js, and Node.js."
-              }
+              {"With over 5 years of experience in web development, I specialize in creating scalable, user-friendly applications using React, Next.js, and Node.js."}
             </p>
             <p className="text-pretty">
-              {
-                "I believe in writing clean, maintainable code and staying up-to-date with the latest web technologies and best practices."
-              }
+              {"I believe in writing clean, maintainable code and staying up-to-date with the latest web technologies and best practices."}
             </p>
           </div>
           <div>
@@ -133,26 +92,7 @@ export function AboutSection() {
   )
 }
 
-export function ProjectsSection() {
-  const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
-
-  const handleClose = () => setWindowState("closed")
-
-  if (windowState === "closed") {
-    return null
-  }
-
-  if (windowState === "minimized") {
-    return (
-      <div
-        className="fixed bottom-20 left-36 w-16 h-12 bg-card/80 backdrop-blur-sm border border-border rounded cursor-pointer hover:scale-105 transition-transform"
-        onClick={() => setWindowState("normal")}
-      >
-        <div className="p-2 text-xs text-center text-card-foreground">Projects</div>
-      </div>
-    )
-  }
-
+export function ProjectsSection({ onClose }: WindowSectionProps) {
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -180,8 +120,8 @@ export function ProjectsSection() {
   return (
     <MacOSWindow
       title="Projects"
-      className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-4xl"}
-      onClose={handleClose}
+      className="max-w-4xl"
+      onClose={onClose}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
@@ -218,26 +158,7 @@ export function ProjectsSection() {
   )
 }
 
-export function SkillsSection() {
-  const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
-
-  const handleClose = () => setWindowState("closed")
-
-  if (windowState === "closed") {
-    return null
-  }
-
-  if (windowState === "minimized") {
-    return (
-      <div
-        className="fixed bottom-20 left-52 w-16 h-12 bg-card/80 backdrop-blur-sm border border-border rounded cursor-pointer hover:scale-105 transition-transform"
-        onClick={() => setWindowState("normal")}
-      >
-        <div className="p-2 text-xs text-center text-card-foreground">Skills</div>
-      </div>
-    )
-  }
-
+export function SkillsSection({ onClose }: WindowSectionProps) {
   const skillCategories = [
     {
       title: "Frontend",
@@ -256,8 +177,8 @@ export function SkillsSection() {
   return (
     <MacOSWindow
       title="Skills & Technologies"
-      className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-3xl"}
-      onClose={handleClose}
+      className="max-w-3xl"
+      onClose={onClose}
     >
       <div className="grid md:grid-cols-3 gap-8">
         {skillCategories.map((category) => (
@@ -280,31 +201,12 @@ export function SkillsSection() {
   )
 }
 
-export function ContactSection() {
-  const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
-
-  const handleClose = () => setWindowState("closed")
-
-  if (windowState === "closed") {
-    return null
-  }
-
-  if (windowState === "minimized") {
-    return (
-      <div
-        className="fixed bottom-20 left-68 w-16 h-12 bg-card/80 backdrop-blur-sm border border-border rounded cursor-pointer hover:scale-105 transition-transform"
-        onClick={() => setWindowState("normal")}
-      >
-        <div className="p-2 text-xs text-center text-card-foreground">Contact</div>
-      </div>
-    )
-  }
-
+export function ContactSection({ onClose }: WindowSectionProps) {
   return (
     <MacOSWindow
       title="Get In Touch"
-      className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-2xl"}
-      onClose={handleClose}
+      className="max-w-2xl"
+      onClose={onClose}
     >
       <div className="text-center space-y-6">
         <div>
@@ -312,9 +214,7 @@ export function ContactSection() {
             {"Let's Work Together"}
           </h2>
           <p className="text-lg text-muted-foreground text-pretty">
-            {
-              "Interested in collaborating? I'd love to hear about your project and discuss how we can bring your ideas to life."
-            }
+            {"Interested in collaborating? I'd love to hear about your project and discuss how we can bring your ideas to life."}
           </p>
         </div>
 

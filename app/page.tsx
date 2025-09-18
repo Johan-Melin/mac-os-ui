@@ -11,8 +11,10 @@ import {
   ContactSection,
 } from "@/components/portfolio-sections"
 
+type Section = "home" | "about" | "projects" | "skills" | "contact" | null
+
 export default function Portfolio() {
-  const [currentSection, setCurrentSection] = useState("home")
+  const [currentSection, setCurrentSection] = useState<Section>("home")
   const [currentTime, setCurrentTime] = useState("")
 
   useEffect(() => {
@@ -33,20 +35,22 @@ export default function Portfolio() {
     return () => clearInterval(interval)
   }, [])
 
+  const onClose = () => setCurrentSection(null)
+
   const renderSection = () => {
     switch (currentSection) {
       case "home":
-        return <HomeSection />
+        return <HomeSection onClose={onClose} />
       case "about":
-        return <AboutSection />
+        return <AboutSection onClose={onClose} />
       case "projects":
-        return <ProjectsSection />
+        return <ProjectsSection onClose={onClose} />
       case "skills":
-        return <SkillsSection />
+        return <SkillsSection onClose={onClose} />
       case "contact":
-        return <ContactSection />
+        return <ContactSection onClose={onClose} />
       default:
-        return <HomeSection />
+        return null
     }
   }
 
@@ -69,7 +73,7 @@ export default function Portfolio() {
       </div>
 
       {/* macOS Dock */}
-      <MacOSDock onNavigate={setCurrentSection} />
+      <MacOSDock onNavigate={(section: string) => setCurrentSection(section as Section)} />
     </div>
   )
 }
