@@ -100,7 +100,7 @@ export function MacOSDock({ onNavigate }: MacOSDockProps) {
               onClick={item.action}
             >
               <div className="text-foreground">
-                {typeof item.icon === "string" ? <span className="text-2xl">{item.icon}</span> : item.icon}
+                {typeof item.icon === "string" ? <span suppressHydrationWarning className="text-2xl">{item.icon}</span> : item.icon}
               </div>
             </button>
 
