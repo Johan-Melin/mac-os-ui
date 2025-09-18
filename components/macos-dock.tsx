@@ -3,8 +3,9 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Home, User, Mail, Github, Linkedin, Code, FolderOpen } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import { useTheme } from "next-themes"
+import { sections, type SectionId } from "@/lib/sections"
 
 interface DockItem {
   id: string
@@ -14,44 +15,22 @@ interface DockItem {
 }
 
 interface MacOSDockProps {
-  onNavigate: (section: string) => void
+  onNavigate: (section: SectionId) => void
 }
 
 export function MacOSDock({ onNavigate }: MacOSDockProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const { theme, setTheme } = useTheme()
 
+  const coreItems: DockItem[] = sections.map((s) => ({
+    id: s.id,
+    icon: s.icon,
+    label: s.title,
+    action: () => onNavigate(s.id),
+  }))
+
   const dockItems: DockItem[] = [
-    {
-      id: "home",
-      icon: <Home className="w-6 h-6" />,
-      label: "Home",
-      action: () => onNavigate("home"),
-    },
-    {
-      id: "about",
-      icon: <User className="w-6 h-6" />,
-      label: "About",
-      action: () => onNavigate("about"),
-    },
-    {
-      id: "projects",
-      icon: <FolderOpen className="w-6 h-6" />,
-      label: "Projects",
-      action: () => onNavigate("projects"),
-    },
-    {
-      id: "skills",
-      icon: <Code className="w-6 h-6" />,
-      label: "Skills",
-      action: () => onNavigate("skills"),
-    },
-    {
-      id: "contact",
-      icon: <Mail className="w-6 h-6" />,
-      label: "Contact",
-      action: () => onNavigate("contact"),
-    },
+    ...coreItems,
     {
       id: "github",
       icon: <Github className="w-6 h-6" />,

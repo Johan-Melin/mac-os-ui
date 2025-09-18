@@ -3,12 +3,10 @@
 import { useState, useEffect } from "react"
 import { MacOSMenubar } from "@/components/macos-menubar"
 import { MacOSDock } from "@/components/macos-dock"
-import { HomeSection, AboutSection, ProjectsSection, SkillsSection, ContactSection } from "@/components/sections"
-
-type Section = "home" | "about" | "projects" | "skills" | "contact" | null
+import { sections, type SectionId } from "@/lib/sections"
 
 export default function Portfolio() {
-  const [currentSection, setCurrentSection] = useState<Section>("home")
+  const [currentSection, setCurrentSection] = useState<SectionId | null>(sections[0]?.id ?? null)
   const [currentTime, setCurrentTime] = useState("")
 
   useEffect(() => {
@@ -30,23 +28,7 @@ export default function Portfolio() {
   }, [])
 
   const onClose = () => setCurrentSection(null)
-
-  const renderSection = () => {
-    switch (currentSection) {
-      case "home":
-        return <HomeSection onClose={onClose} />
-      case "about":
-        return <AboutSection onClose={onClose} />
-      case "projects":
-        return <ProjectsSection onClose={onClose} />
-      case "skills":
-        return <SkillsSection onClose={onClose} />
-      case "contact":
-        return <ContactSection onClose={onClose} />
-      default:
-        return null
-    }
-  }
+  const active = sections.find((s) => s.id === currentSection)
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,11 +45,11 @@ export default function Portfolio() {
         }}
       >
         {/* Content Area */}
-        <div className="h-full flex items-center justify-center p-8">{renderSection()}</div>
+        <div className="h-full flex items-center justify-center p-8">{active ? <active.Component onClose={onClose} /> : null}</div>
       </div>
 
       {/* macOS Dock */}
-      <MacOSDock onNavigate={(section: string) => setCurrentSection(section as Section)} />
+      <MacOSDock onNavigate={(section) => setCurrentSection(section)} />
     </div>
   )
 }
