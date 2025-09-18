@@ -11,8 +11,6 @@ export function HomeSection() {
   const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
 
   const handleClose = () => setWindowState("closed")
-  const handleMinimize = () => setWindowState("minimized")
-  const handleMaximize = () => setWindowState(windowState === "fullscreen" ? "normal" : "fullscreen")
 
   if (windowState === "closed") {
     return null
@@ -34,8 +32,6 @@ export function HomeSection() {
       title="Welcome"
       className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-2xl"}
       onClose={handleClose}
-      onMinimize={handleMinimize}
-      onMaximize={handleMaximize}
     >
       <div className="text-center space-y-6">
         <div className="w-32 h-32 mx-auto rounded-full bg-slate-700 flex items-center justify-center text-4xl font-bold text-white shadow-lg">
@@ -73,8 +69,6 @@ export function AboutSection() {
   const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
 
   const handleClose = () => setWindowState("closed")
-  const handleMinimize = () => setWindowState("minimized")
-  const handleMaximize = () => setWindowState(windowState === "fullscreen" ? "normal" : "fullscreen")
 
   if (windowState === "closed") {
     return null
@@ -96,8 +90,6 @@ export function AboutSection() {
       title="About Me"
       className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-3xl"}
       onClose={handleClose}
-      onMinimize={handleMinimize}
-      onMaximize={handleMaximize}
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8">
@@ -145,8 +137,6 @@ export function ProjectsSection() {
   const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
 
   const handleClose = () => setWindowState("closed")
-  const handleMinimize = () => setWindowState("minimized")
-  const handleMaximize = () => setWindowState(windowState === "fullscreen" ? "normal" : "fullscreen")
 
   if (windowState === "closed") {
     return null
@@ -192,8 +182,6 @@ export function ProjectsSection() {
       title="Projects"
       className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-4xl"}
       onClose={handleClose}
-      onMinimize={handleMinimize}
-      onMaximize={handleMaximize}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
@@ -234,8 +222,6 @@ export function SkillsSection() {
   const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
 
   const handleClose = () => setWindowState("closed")
-  const handleMinimize = () => setWindowState("minimized")
-  const handleMaximize = () => setWindowState(windowState === "fullscreen" ? "normal" : "fullscreen")
 
   if (windowState === "closed") {
     return null
@@ -272,8 +258,6 @@ export function SkillsSection() {
       title="Skills & Technologies"
       className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-3xl"}
       onClose={handleClose}
-      onMinimize={handleMinimize}
-      onMaximize={handleMaximize}
     >
       <div className="grid md:grid-cols-3 gap-8">
         {skillCategories.map((category) => (
@@ -300,8 +284,6 @@ export function ContactSection() {
   const [windowState, setWindowState] = useState<"normal" | "minimized" | "fullscreen" | "closed">("normal")
 
   const handleClose = () => setWindowState("closed")
-  const handleMinimize = () => setWindowState("minimized")
-  const handleMaximize = () => setWindowState(windowState === "fullscreen" ? "normal" : "fullscreen")
 
   if (windowState === "closed") {
     return null
@@ -323,8 +305,6 @@ export function ContactSection() {
       title="Get In Touch"
       className={windowState === "fullscreen" ? "fixed inset-4 max-w-none z-50" : "max-w-2xl"}
       onClose={handleClose}
-      onMinimize={handleMinimize}
-      onMaximize={handleMaximize}
     >
       <div className="text-center space-y-6">
         <div>

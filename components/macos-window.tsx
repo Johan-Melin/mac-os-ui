@@ -8,11 +8,9 @@ interface MacOSWindowProps {
   children: ReactNode
   className?: string
   onClose?: () => void
-  onMinimize?: () => void
-  onMaximize?: () => void
 }
 
-export function MacOSWindow({ title, children, className = "", onClose, onMinimize, onMaximize }: MacOSWindowProps) {
+export function MacOSWindow({ title, children, className = "", onClose }: MacOSWindowProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -33,20 +31,6 @@ export function MacOSWindow({ title, children, className = "", onClose, onMinimi
             onClick={onClose}
           >
             {isHovered && <X className="w-2 h-2 text-red-800 mx-auto" />}
-          </button>
-          <button
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${isHovered ? "hover:brightness-90" : ""}`}
-            style={{ backgroundColor: "var(--macos-traffic-yellow)" }}
-            onClick={onMinimize}
-          >
-            {isHovered && <Minus className="w-2 h-2 text-yellow-800 mx-auto" />}
-          </button>
-          <button
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${isHovered ? "hover:brightness-90" : ""}`}
-            style={{ backgroundColor: "var(--macos-traffic-green)" }}
-            onClick={onMaximize}
-          >
-            {isHovered && <Square className="w-2 h-2 text-green-800 mx-auto" />}
           </button>
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">
