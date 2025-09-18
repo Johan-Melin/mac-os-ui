@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { MacOSMenubar } from "@/components/macos-menubar"
 import { MacOSDock } from "@/components/macos-dock"
 import { sections, type SectionId } from "@/lib/sections"
+import { WindowManagerProvider } from "@/components/window-manager"
 
 export default function Portfolio() {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(sections[0]?.id ?? null)
@@ -45,7 +46,11 @@ export default function Portfolio() {
         }}
       >
         {/* Content Area */}
-        <div className="h-full flex items-center justify-center p-8">{active ? <active.Component onClose={onClose} /> : null}</div>
+        <div className="h-full flex items-center justify-center p-8">
+          <WindowManagerProvider close={onClose}>
+            {active ? <active.Component /> : null}
+          </WindowManagerProvider>
+        </div>
       </div>
 
       {/* macOS Dock */}

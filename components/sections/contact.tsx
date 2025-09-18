@@ -4,16 +4,11 @@ import { MacOSWindow } from "../macos-window"
 import { Button } from "../ui/button"
 import { Github, Mail } from "lucide-react"
 
-interface WindowSectionProps {
-  onClose: () => void
-}
-
-export function ContactSection({ onClose }: WindowSectionProps) {
+export function ContactSection() {
   return (
     <MacOSWindow
       title="Get In Touch"
       className="max-w-2xl"
-      onClose={onClose}
     >
       <div className="text-center space-y-6">
         <div>

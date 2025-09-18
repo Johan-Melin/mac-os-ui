@@ -6,11 +6,7 @@ import { Button } from "../ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 import { ExternalLink, Github } from "lucide-react"
 
-interface WindowSectionProps {
-  onClose: () => void
-}
-
-export function ProjectsSection({ onClose }: WindowSectionProps) {
+export function ProjectsSection() {
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -39,7 +35,6 @@ export function ProjectsSection({ onClose }: WindowSectionProps) {
     <MacOSWindow
       title="Projects"
       className="max-w-4xl"
-      onClose={onClose}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (

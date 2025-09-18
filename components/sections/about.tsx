@@ -3,16 +3,11 @@
 import { MacOSWindow } from "../macos-window"
 import { Mail, MapPin, Calendar } from "lucide-react"
 
-interface WindowSectionProps {
-  onClose: () => void
-}
-
-export function AboutSection({ onClose }: WindowSectionProps) {
+export function AboutSection() {
   return (
     <MacOSWindow
       title="About Me"
       className="max-w-3xl"
-      onClose={onClose}
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8">

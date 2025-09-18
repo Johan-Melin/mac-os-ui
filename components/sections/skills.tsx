@@ -2,11 +2,7 @@
 
 import { MacOSWindow } from "../macos-window"
 
-interface WindowSectionProps {
-  onClose: () => void
-}
-
-export function SkillsSection({ onClose }: WindowSectionProps) {
+export function SkillsSection() {
   const skillCategories = [
     {
       title: "Frontend",
@@ -26,7 +22,6 @@ export function SkillsSection({ onClose }: WindowSectionProps) {
     <MacOSWindow
       title="Skills & Technologies"
       className="max-w-3xl"
-      onClose={onClose}
     >
       <div className="grid md:grid-cols-3 gap-8">
         {skillCategories.map((category) => (

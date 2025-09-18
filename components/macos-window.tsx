@@ -1,7 +1,8 @@
 "use client"
 
 import { type ReactNode, useState } from "react"
-import { X, Minus, Square } from "lucide-react"
+import { X } from "lucide-react"
+import { useWindowManager } from "./window-manager"
 
 interface MacOSWindowProps {
   title: string
@@ -12,6 +13,7 @@ interface MacOSWindowProps {
 
 export function MacOSWindow({ title, children, className = "", onClose }: MacOSWindowProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const wm = useWindowManager()
 
   return (
     <div
@@ -28,7 +30,7 @@ export function MacOSWindow({ title, children, className = "", onClose }: MacOSW
           <button
             className={`w-3 h-3 rounded-full transition-all duration-200 ${isHovered ? "hover:brightness-90" : ""}`}
             style={{ backgroundColor: "var(--macos-traffic-red)" }}
-            onClick={onClose}
+            onClick={onClose ?? wm?.close}
           >
             {isHovered && <X className="w-2 h-2 text-red-800 mx-auto" />}
           </button>
